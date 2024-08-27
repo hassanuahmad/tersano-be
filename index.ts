@@ -107,7 +107,7 @@ app.post("/dashboard", authenticateToken, (req: Request, res: Response) => {
                 return res.status(500).json({ error: "Error saving product" });
             } else {
                 res.status(200).json({
-                    id: Math.random() * (100000 - 50000) + 50000,
+                    id: this.lastID,
                     name,
                     price,
                     description,
